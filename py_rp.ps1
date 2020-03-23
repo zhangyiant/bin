@@ -1,0 +1,1 @@
+. C:\py37_rp\Scripts\Activate.ps1
