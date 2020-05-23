@@ -1,1 +1,2 @@
-Set-Location C:\Users\zhang\git\bin
+Set-Location C:\Data\git\bin
+
