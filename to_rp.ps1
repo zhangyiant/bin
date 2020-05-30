@@ -1,2 +1,1 @@
-C:
-cd \Users\zhang\git\RegisterPrinter
+Set-Location C:\Data\git\RegisterPrinter

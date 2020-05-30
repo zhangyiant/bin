@@ -1,2 +1,1 @@
-C:
-cd \Users\zhang\git\register-printer-frontend
+Set-Location C:\Data\git\register-printer-frontend
