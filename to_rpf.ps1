@@ -1,1 +1,1 @@
-Set-Location C:\Data\git\register-printer-frontend
+Set-Location $HOME\git\register-printer-frontend

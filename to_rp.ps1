@@ -1,1 +1,1 @@
-Set-Location C:\Data\git\RegisterPrinter
+Set-Location $HOME\git\RegisterPrinter
