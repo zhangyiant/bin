@@ -1,2 +1,2 @@
-Set-Location C:\Data\git\bin
+Set-Location $HOME\git\bin
 
