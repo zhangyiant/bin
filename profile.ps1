@@ -73,3 +73,7 @@ function gl {
 function gtl {
     git tag --list
 }
+
+function to_emacs_d {
+    Set-Location ${env:USERPROFILE}\AppData\Roaming\.emacs.d
+}
