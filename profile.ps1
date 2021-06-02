@@ -77,3 +77,7 @@ function gtl {
 function to_emacs_d {
     Set-Location ${env:USERPROFILE}\AppData\Roaming\.emacs.d
 }
+
+function To-Tmp {
+    Set-Location C:\tmp
+}
