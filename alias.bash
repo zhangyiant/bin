@@ -24,3 +24,21 @@ alias gtl="git tag --list"
 
 # rpf alias
 alias to_rpf='cd ~/git/register-printer-frontend'
+
+function get-my-home() {
+    if [[ -z "${MY_HOME}" ]]; then
+	echo $HOME
+    else
+	echo ${MY_HOME}
+    fi
+}
+
+function to-git() {
+    my_home=`get-my-home`
+    cd ${my_home}/git
+}
+
+function to-bin() {
+    my_home=`get-my-home`
+    cd ${my_home}/git/bin
+}
