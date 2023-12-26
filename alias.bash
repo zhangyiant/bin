@@ -22,9 +22,6 @@ alias gl="git log --graph"
 alias gr="git remote -v"
 alias gtl="git tag --list"
 
-# rpf alias
-alias to_rpf='cd ~/git/register-printer-frontend'
-
 function get-my-home() {
     if [[ -z "${MY_HOME}" ]]; then
 	echo $HOME
@@ -41,4 +38,14 @@ function to-git() {
 function to-bin() {
     my_home=`get-my-home`
     cd ${my_home}/git/bin
+}
+
+function to-rp() {
+    my_home=`get-my-home`
+    cd ${my_home}/git/RegisterPrinter
+}
+
+function to-rpf() {
+    my_home=`get-my-home`
+    cd ${my_home}/git/register-printer-frontend
 }
