@@ -81,3 +81,15 @@ function to_emacs_d {
 function To-Tmp {
     Set-Location C:\tmp
 }
+
+function To-Rp {
+    Set-Location $MyHome\git\RegisterPrinter
+}
+
+function To-Rpf {
+    Set-Location $MyHome\git\register-printer-frontend
+}
+
+function To-Bin {
+    Set-Location $MyHome\git\bin
+}
