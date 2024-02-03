@@ -82,6 +82,10 @@ function To-Tmp {
     Set-Location C:\tmp
 }
 
+function To-Git {
+    Set-Location $MyHome\git
+}
+
 function To-Rp {
     Set-Location $MyHome\git\RegisterPrinter
 }
