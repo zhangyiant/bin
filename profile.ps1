@@ -48,9 +48,9 @@ function gp {
 
 function gclean {
     git stash
-    git clean -dxf
+    git clean -dxff
     git submodule foreach --recursive git stash
-    git submodule foreach --recursive git clean -dxf
+    git submodule foreach --recursive git clean -dxff
 }
 
 function gacp {
