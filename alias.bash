@@ -22,6 +22,9 @@ alias gl="git log --graph"
 alias gr="git remote -v"
 alias gtl="git tag --list"
 
+# tmux
+alias t="tmux attach"
+
 function get-my-home() {
     if [[ -z "${MY_HOME}" ]]; then
 	echo $HOME
