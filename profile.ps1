@@ -49,8 +49,10 @@ function gp {
 function gclean {
     git stash
     git clean -dxff
+    git remote prune origin
     git submodule foreach --recursive git stash
     git submodule foreach --recursive git clean -dxff
+    git submodule foreach --recursive git remote prune origin
 }
 
 function gacp {
