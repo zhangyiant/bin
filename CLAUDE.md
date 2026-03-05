@@ -18,28 +18,6 @@ This is a personal scripts/dotfiles repository containing shell utilities and co
 
 **Dual environment:** Every git shortcut exists in both Bash (`alias.bash`) and PowerShell (`profile.ps1`). When adding new shortcuts, add them to both files.
 
-**Git shortcuts defined:**
-- `ga` — `git add`
-- `gb` — `git branch -a`
-- `gc` — `git commit`
-- `gcl` — `git clone`
-- `gco` — `git checkout`
-- `gd` — `git diff`
-- `gdc` — `git diff --cached`
-- `gfo` — `git fetch origin`
-- `gmo` — `git merge origin/master`
-- `gp` — `git push`
-- `gpu` — `git pull`
-- `gs` — `git status`
-- `gsu` — `git submodule update --init --recursive`
-- `gtl` — `git tag --list`
-- `gl` — `git log --graph`
-- `gr` — `git remote -v`
-- `gacp` — `git add . && git commit -m update && git push`
-- `gclean` — stash, clean, prune remotes (including submodules)
-
-**Navigation helpers:** `to-bin`, `to-git`, `to-rp`, `to-rpf` in Bash; `To-Bin`, `To-Git`, `To-Rp`, `To-Rpf` in PowerShell.
-
 **Standalone scripts:**
 - `proxy.ps1` / `unproxy.ps1` — Set/unset git HTTP proxy (`localhost:9000`)
 - `gacp.ps1` — Standalone add/commit/push script
