@@ -25,29 +25,30 @@ alias gtl="git tag --list"
 # tmux
 alias t="tmux attach"
 
+# Get the user's home directory, preferring MY_HOME if set, otherwise $HOME
 function get-my-home() {
-    if [[ -z "${MY_HOME}" ]]; then
-	echo $HOME
-    else
-	echo ${MY_HOME}
-    fi
+    echo "${MY_HOME:-$HOME}"
 }
 
+# Change directory to the git directory in the user's home
 function to-git() {
     my_home=`get-my-home`
     cd ${my_home}/git
 }
 
+# Change directory to the bin directory in the git repo
 function to-bin() {
     my_home=`get-my-home`
     cd ${my_home}/git/bin
 }
 
+# Change directory to the RegisterPrinter project
 function to-rp() {
     my_home=`get-my-home`
     cd ${my_home}/git/RegisterPrinter
 }
 
+# Change directory to the register-printer-frontend project
 function to-rpf() {
     my_home=`get-my-home`
     cd ${my_home}/git/register-printer-frontend
