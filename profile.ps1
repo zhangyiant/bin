@@ -1,6 +1,9 @@
-Remove-Alias -Name gc -Force
-Remove-Alias -Name gp -Force
-Remove-Alias -Name gl -Force
+foreach ($alias in @('gc', 'gp', 'gl')) {
+    if (Get-Alias -Name $alias -ErrorAction SilentlyContinue) {
+        Write-Host "Removing built-in alias: $alias"
+        Remove-Alias -Name $alias -Force
+    }
+}
 
 function gpu {
     git pull $args
