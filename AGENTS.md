@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a personal scripts/dotfiles repository containing shell utilities and configuration files for both PowerShell (Windows) and Bash (Linux/macOS) environments. The scripts primarily provide git shortcuts and navigation helpers.
+This repository contains personal shell utilities, configuration files, AI assistant guidance, and documentation for both PowerShell (Windows) and Bash (Linux/macOS) environments. The scripts primarily provide git shortcuts and navigation helpers.
 
 ## Repository Structure
 
@@ -12,6 +12,9 @@ This is a personal scripts/dotfiles repository containing shell utilities and co
 - `profile.ps1` — PowerShell functions equivalent to the Bash aliases
 - `Microsoft.PowerShell_profile.ps1` — PowerShell profile entry point; sets `$MyHome` and dots into `profile.ps1`
 - `backup.bat` — Windows backup script
+- `AGENTS.md` — Guidance for AI assistants working with this repository
+- `CLAUDE.md` — Reference to AGENTS.md for Claude-specific instructions
+- `README.md` — Repository documentation and setup instructions
 
 ## Key Patterns
 
