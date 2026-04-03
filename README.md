@@ -68,12 +68,12 @@ The profile will automatically set `$MyHome` and source the main profile script.
 - `to-rpf` — Navigate to `$MY_HOME/git/register-printer-frontend`
 
 #### PowerShell Functions
-- `To-Git` — Navigate to `$MyHome\git` directory  
-- `To-Bin` — Navigate to this repository (`$MyHome\git\bin`)
-- `To-Rp` — Navigate to `$MyHome\git\RegisterPrinter`
-- `To-Rpf` — Navigate to `$MyHome\git\register-printer-frontend`
-- `to_emacs_d` — Navigate to Emacs configuration directory
-- `To-Tmp` — Navigate to `C:\tmp`
+- `Enter-Git` — Navigate to `$MyHome\git` directory  
+- `Enter-Bin` — Navigate to this repository (`$MyHome\git\bin`)
+- `Enter-Rp` — Navigate to `$MyHome\git\RegisterPrinter`
+- `Enter-Rpf` — Navigate to `$MyHome\git\register-printer-frontend`
+- `Enter-EmacsD` — Navigate to Emacs configuration directory
+- `Enter-Tmp` — Navigate to `C:\tmp`
 
 ### Other Aliases
 

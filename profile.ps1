@@ -71,26 +71,26 @@ function gtl {
     git tag --list
 }
 
-function to_emacs_d {
+function Enter-EmacsD {
     Set-Location ${env:USERPROFILE}\AppData\Roaming\.emacs.d
 }
 
-function To-Tmp {
+function Enter-Tmp {
     Set-Location C:\tmp
 }
 
-function To-Git {
+function Enter-Git {
     Set-Location $MyHome\git
 }
 
-function To-Rp {
+function Enter-Rp {
     Set-Location $MyHome\git\RegisterPrinter
 }
 
-function To-Rpf {
+function Enter-Rpf {
     Set-Location $MyHome\git\register-printer-frontend
 }
 
-function To-Bin {
+function Enter-Bin {
     Set-Location $MyHome\git\bin
 }
