@@ -50,7 +50,6 @@ The profile will automatically set `$MyHome` and source the main profile script.
 | `gs` | `git status` |
 | `gsu` | `git submodule update --init --recursive` |
 | `gc` | `git commit` |
-| `gcl` | `git clone` |
 | `gco` | `git checkout` |
 | `gp` | `git push` |
 | `gclean` | Clean workspace: stash, clean, prune remotes |

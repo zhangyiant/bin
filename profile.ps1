@@ -37,10 +37,6 @@ function gc {
     git commit $args
 }
 
-function gcl {
-    git clone $args
-}
-
 function gco {
     git checkout $args
 }
