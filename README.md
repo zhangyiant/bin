@@ -57,7 +57,6 @@ The profile will automatically set `$MyHome` and source the main profile script.
 | `gacp` | Add all, commit with "update" message, and push |
 | `gpu` | `git pull` |
 | `gfo` | `git fetch origin` |
-| `gmo` | `git merge origin/master` |
 | `gl` | `git log --graph` |
 | `gr` | `git remote -v` |
 | `gtl` | `git tag --list` |

@@ -66,10 +66,6 @@ function gfo {
     git fetch origin
 }
 
-function gmo {
-    git merge origin/master
-}
-
 
 function gl {
     git log --graph
