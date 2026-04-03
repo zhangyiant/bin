@@ -18,7 +18,6 @@ alias gacp="git add . && git commit -m update && git push"
 alias gpu="git pull"
 alias gfo="git fetch origin"
 alias gl="git log --graph"
-alias gr="git remote -v"
 alias gtl="git tag --list"
 
 # tmux

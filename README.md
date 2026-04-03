@@ -58,7 +58,6 @@ The profile will automatically set `$MyHome` and source the main profile script.
 | `gpu` | `git pull` |
 | `gfo` | `git fetch origin` |
 | `gl` | `git log --graph` |
-| `gr` | `git remote -v` |
 | `gtl` | `git tag --list` |
 
 ### Navigation Functions
