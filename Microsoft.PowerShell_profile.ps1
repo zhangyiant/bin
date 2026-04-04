@@ -1,2 +1,2 @@
-$MyHome = $HOME
-. ${MyHome}\git\bin\profile.ps1
+$MyHome = if ($env:MY_HOME) { $env:MY_HOME } else { $HOME }
+. (Join-Path $MyHome 'git\bin\profile.ps1')

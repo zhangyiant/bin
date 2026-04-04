@@ -1,0 +1,56 @@
+name: validate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  shell-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Lint Bash helpers
+        run: shellcheck alias.bash
+
+      - name: Parse PowerShell scripts
+        shell: pwsh
+        run: |
+          $files = @(
+            'profile.ps1'
+            'Microsoft.PowerShell_profile.ps1'
+          )
+
+          $hadError = $false
+
+          foreach ($file in $files) {
+            $resolvedPath = (Resolve-Path $file).Path
+            $tokens = $null
+            $errors = $null
+
+            [System.Management.Automation.Language.Parser]::ParseFile(
+              $resolvedPath,
+              [ref]$tokens,
+              [ref]$errors
+            ) | Out-Null
+
+            if ($errors -and $errors.Count -gt 0) {
+              $hadError = $true
+
+              foreach ($error in $errors) {
+                Write-Error "$file:$($error.Extent.StartLineNumber): $($error.Message)"
+              }
+            }
+          }
+
+          if ($hadError) {
+            exit 1
+          }

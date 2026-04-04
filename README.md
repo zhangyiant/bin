@@ -24,18 +24,12 @@ source /path/to/this/repo/alias.bash
 
 ### PowerShell Setup (Windows)
 
-The `Microsoft.PowerShell_profile.ps1` file is designed to be placed in your PowerShell profile directory. Typically, this is:
+The `Microsoft.PowerShell_profile.ps1` file is designed to be placed in your PowerShell profile directory:
 
-```
-$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
-```
+- Windows PowerShell 5.1: `$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+- PowerShell 7+: `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
 
-Or for PowerShell Core:
-```
-$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
-```
-
-The profile will automatically set `$MyHome` and source the main profile script.
+The checked-in profile currently assumes this repository lives at `$HOME\git\bin` and dot-sources `profile.ps1` from that location. If your clone lives somewhere else, update the path in `Microsoft.PowerShell_profile.ps1`.
 
 ## Available Commands
 
@@ -52,7 +46,7 @@ The profile will automatically set `$MyHome` and source the main profile script.
 | `gc` | `git commit` |
 | `gco` | `git checkout` |
 | `gp` | `git push` |
-| `gclean` | Clean workspace: stash, clean, prune remotes |
+| `gclean` | Destructive cleanup: stash, clean, prune remotes |
 | `gacp` | Add all, commit with "update" message, and push |
 | `gpu` | `git pull` |
 | `gfo` | `git fetch origin` |
@@ -89,7 +83,7 @@ Every git shortcut exists in both Bash (`alias.bash`) and PowerShell (`profile.p
 
 ### Environment Variable Handling
 - **Bash**: Uses `MY_HOME` environment variable (falls back to `$HOME` if not set)
-- **PowerShell**: Uses `$MyHome` variable (set to `$HOME` by default)
+- **PowerShell**: Uses `$env:MY_HOME` when present, otherwise falls back to `$HOME`
 
 ### Standalone Scripts
 - `backup.bat` — Windows backup script using robocopy to copy Documents, Pictures, and Videos to a network location
@@ -101,16 +95,51 @@ When working with this repository:
 1. **Maintain parity**: Ensure equivalent functionality exists in both Bash and PowerShell versions
 2. **Follow naming conventions**: 
    - Bash: lowercase with hyphens (`to-git`)
-   - PowerShell: PascalCase (`To-Git`)
+   - PowerShell: `Enter-*` functions (`Enter-Git`)
 3. **Update documentation**: Keep this README and AGENTS.md current when adding new functionality
 4. **Test both environments**: Verify changes work in both Bash and PowerShell
 
+## Safety Notes
+
+- `gclean` runs `git clean -dxff`, which removes untracked files and directories. Review the current working tree before using it.
+- `backup.bat` contains machine-specific Windows and NAS paths. Update them before using the script on another machine.
+
+## Smoke Tests
+
+Run these lightweight checks after changing the shell helpers.
+
+### Bash
+
+```bash
+source /path/to/this/repo/alias.bash
+type to-bin
+type gclean
+to-bin
+```
+
+### PowerShell
+
+```powershell
+. $PROFILE
+Get-Command Enter-Bin
+Get-Command gclean
+Enter-Bin
+```
+
+## Automated Validation
+
+GitHub Actions runs `.github/workflows/validate.yml` to:
+- lint `alias.bash` with `shellcheck`
+- parse `profile.ps1` and `Microsoft.PowerShell_profile.ps1` for PowerShell syntax errors
+
 ## Backup Script
 
-The `backup.bat` script uses `robocopy` to backup user data to a network location:
-- Documents → `\\192.168.1.238\nas\Documents`
-- Pictures → `\\192.168.1.238\nas\Pictures`  
-- Videos → `\\192.168.1.238\nas\Videos`
+The `backup.bat` script uses `robocopy` with machine-specific paths:
+- `C:\Users\zhang\Documents\MyDocuments` → `\\192.168.1.238\nas\Documents`
+- `C:\Users\zhang\Pictures\Pictures` → `\\192.168.1.238\nas\Pictures`
+- `C:\Users\zhang\Videos\Videos` → `\\192.168.1.238\nas\Videos`
+
+You can override these defaults with `BACKUP_SOURCE_DOCUMENTS`, `BACKUP_SOURCE_PICTURES`, `BACKUP_SOURCE_VIDEOS`, and `BACKUP_DEST_ROOT` before running the script on another machine.
 
 ## For AI Assistants
 

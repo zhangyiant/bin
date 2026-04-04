@@ -18,7 +18,11 @@ This repository contains personal shell utilities, configuration files, AI assis
 
 ## Key Patterns
 
-**Dual environment:** Every git shortcut exists in both Bash (`alias.bash`) and PowerShell (`profile.ps1`). When adding new shortcuts, add them to both files.
+**Dual environment:** Every git shortcut exists in both Bash (`alias.bash`) and PowerShell (`profile.ps1`). When adding new shortcuts, add them to both files and keep behavior aligned across shells.
+
+**Navigation naming:** Bash navigation helpers use `to-*`; PowerShell uses `Enter-*`.
+
+**Environment handling:** Bash resolves paths from `MY_HOME` and falls back to `$HOME`. The PowerShell profile entry point assumes the repository lives at `$HOME\git\bin` unless its dot-sourced path is edited.
 
 **Standalone scripts:**
-- `backup.bat` — Windows backup script
+- `backup.bat` — Windows backup script with machine-specific paths that should be treated as local configuration

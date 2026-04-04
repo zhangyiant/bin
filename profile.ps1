@@ -5,6 +5,10 @@ foreach ($alias in @('gc', 'gp', 'gl')) {
     }
 }
 
+if (-not $MyHome) {
+    $MyHome = if ($env:MY_HOME) { $env:MY_HOME } else { $HOME }
+}
+
 function gpu {
     git pull $args
 }
@@ -48,14 +52,24 @@ function gp {
 function gclean {
     git stash
     git clean -dxff
-    git remote prune origin
     git submodule foreach --recursive git stash
     git submodule foreach --recursive git clean -dxff
+    git remote prune origin
     git submodule foreach --recursive git remote prune origin
 }
 
 function gacp {
-    git add . && git commit -m update && git push
+    git add .
+    if ($LASTEXITCODE -ne 0) {
+        return
+    }
+
+    git commit -m update
+    if ($LASTEXITCODE -ne 0) {
+        return
+    }
+
+    git push
 }
 
 function gfo {
@@ -80,17 +94,17 @@ function Enter-Tmp {
 }
 
 function Enter-Git {
-    Set-Location $MyHome\git
+    Set-Location (Join-Path $MyHome 'git')
 }
 
 function Enter-Rp {
-    Set-Location $MyHome\git\RegisterPrinter
+    Set-Location (Join-Path (Join-Path $MyHome 'git') 'RegisterPrinter')
 }
 
 function Enter-Rpf {
-    Set-Location $MyHome\git\register-printer-frontend
+    Set-Location (Join-Path (Join-Path $MyHome 'git') 'register-printer-frontend')
 }
 
 function Enter-Bin {
-    Set-Location $MyHome\git\bin
+    Set-Location (Join-Path (Join-Path $MyHome 'git') 'bin')
 }
