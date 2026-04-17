@@ -28,28 +28,28 @@ function get-my-home() {
 }
 
 # Change directory to the git directory in the user's home
-function to-git() {
+function enter-git() {
     local my_home
     my_home="$(get-my-home)"
     cd "${my_home}/git" || return
 }
 
 # Change directory to the bin directory in the git repo
-function to-bin() {
+function enter-bin() {
     local my_home
     my_home="$(get-my-home)"
     cd "${my_home}/git/bin" || return
 }
 
 # Change directory to the RegisterPrinter project
-function to-rp() {
+function enter-rp() {
     local my_home
     my_home="$(get-my-home)"
     cd "${my_home}/git/RegisterPrinter" || return
 }
 
 # Change directory to the register-printer-frontend project
-function to-rpf() {
+function enter-rpf() {
     local my_home
     my_home="$(get-my-home)"
     cd "${my_home}/git/register-printer-frontend" || return

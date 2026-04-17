@@ -20,7 +20,7 @@ This repository contains personal shell utilities, configuration files, AI assis
 
 **Dual environment:** Every git shortcut exists in both Bash (`alias.bash`) and PowerShell (`profile.ps1`). When adding new shortcuts, add them to both files and keep behavior aligned across shells.
 
-**Navigation naming:** Bash navigation helpers use `to-*`; PowerShell uses `Enter-*`.
+**Navigation naming:** Both Bash and PowerShell navigation helpers use `enter-*` / `Enter-*`.
 
 **Environment handling:** Bash resolves paths from `MY_HOME` and falls back to `$HOME`. The PowerShell profile entry point assumes the repository lives at `$HOME\git\bin` unless its dot-sourced path is edited.
 
