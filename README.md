@@ -56,10 +56,10 @@ The checked-in profile currently assumes this repository lives at `$HOME\git\bin
 ### Navigation Functions
 
 #### Bash Functions
-- `to-git` — Navigate to `$MY_HOME/git` directory
-- `to-bin` — Navigate to this repository (`$MY_HOME/git/bin`)
-- `to-rp` — Navigate to `$MY_HOME/git/RegisterPrinter`
-- `to-rpf` — Navigate to `$MY_HOME/git/register-printer-frontend`
+- `enter-git` — Navigate to `$MY_HOME/git` directory
+- `enter-bin` — Navigate to this repository (`$MY_HOME/git/bin`)
+- `enter-rp` — Navigate to `$MY_HOME/git/RegisterPrinter`
+- `enter-rpf` — Navigate to `$MY_HOME/git/register-printer-frontend`
 
 #### PowerShell Functions
 - `Enter-Git` — Navigate to `$MyHome\git` directory  
