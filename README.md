@@ -56,10 +56,9 @@ The checked-in profile currently assumes this repository lives at `$HOME\git\bin
 ### Navigation Functions
 
 #### Bash Functions
-- `to-git` — Navigate to `$MY_HOME/git` directory
-- `to-bin` — Navigate to this repository (`$MY_HOME/git/bin`)
-- `to-rp` — Navigate to `$MY_HOME/git/RegisterPrinter`
-- `to-rpf` — Navigate to `$MY_HOME/git/register-printer-frontend`
+- `enter-bin` — Navigate to this repository (`$MY_HOME/git/bin`)
+- `enter-rp` — Navigate to `$MY_HOME/git/RegisterPrinter`
+- `enter-rpf` — Navigate to `$MY_HOME/git/register-printer-frontend`
 
 #### PowerShell Functions
 - `Enter-Git` — Navigate to `$MyHome\git` directory  
@@ -94,7 +93,7 @@ When working with this repository:
 
 1. **Maintain parity**: Ensure equivalent functionality exists in both Bash and PowerShell versions
 2. **Follow naming conventions**: 
-   - Bash: lowercase with hyphens (`to-git`)
+   - Bash: lowercase with hyphens (`enter-bin`)
    - PowerShell: `Enter-*` functions (`Enter-Git`)
 3. **Update documentation**: Keep this README and AGENTS.md current when adding new functionality
 4. **Test both environments**: Verify changes work in both Bash and PowerShell

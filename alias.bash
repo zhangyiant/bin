@@ -27,13 +27,6 @@ function get-my-home() {
     echo "${MY_HOME:-$HOME}"
 }
 
-# Change directory to the git directory in the user's home
-function enter-git() {
-    local my_home
-    my_home="$(get-my-home)"
-    cd "${my_home}/git" || return
-}
-
 # Change directory to the bin directory in the git repo
 function enter-bin() {
     local my_home
