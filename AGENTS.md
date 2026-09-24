@@ -13,7 +13,6 @@ This repository contains personal shell utilities, configuration files, AI assis
 - `Microsoft.PowerShell_profile.ps1` — PowerShell profile entry point; sets `$MyHome` and dots into `profile.ps1`
 - `backup.bat` — Windows backup script
 - `AGENTS.md` — Guidance for AI assistants working with this repository
-- `CLAUDE.md` — Reference to AGENTS.md for Claude-specific instructions
 - `README.md` — Repository documentation and setup instructions
 - `.github/workflows/validate.yml` — CI checks for Bash and PowerShell script validation
 - `.gitignore` — Minimal ignore rules for editor backup files

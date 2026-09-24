@@ -9,7 +9,6 @@ This repository contains personal shell utilities, configuration files, and scri
 - **`Microsoft.PowerShell_profile.ps1`** — PowerShell profile entry point; sets `$MyHome` and dots into `profile.ps1`
 - **`backup.bat`** — Windows backup script using robocopy
 - **`AGENTS.md`** — Guidance for AI assistants working with this repository
-- **`CLAUDE.md`** — Claude-specific instructions
 
 ## Installation and Setup
 
